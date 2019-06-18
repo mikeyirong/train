@@ -331,7 +331,7 @@
         // `init` API function that initializes (and runs) the presentation.
         var init = function () {
             if (initialized) { return; }
-            
+            console.log("impress init...");
             // First we set up the viewport for mobile devices.
             // For some reason iPad goes nuts when it is not done properly.
             var meta = $("meta[name='viewport']") || document.createElement("meta");
@@ -582,7 +582,7 @@
             steps.forEach(function (step) {
                 step.classList.add("future");
             });
-            
+            console.log("root init event...");
             root.addEventListener("impress:stepenter", function (event) {
                 event.target.classList.remove("past");
                 event.target.classList.remove("future");
@@ -598,7 +598,7 @@
         
         // Adding hash change support.
         root.addEventListener("impress:init", function(){
-            
+            console.log("root hash init event...");
             // last hash detected
             var lastHash = "";
             
@@ -676,7 +676,7 @@
         // or anything. `impress:init` event data gives you everything you 
         // need to control the presentation that was just initialized.
         var api = event.detail.api;
-        
+        console.log("document init event...");
         // KEYBOARD NAVIGATION HANDLERS
         
         // Prevent default keydown action when one of supported key is pressed.
